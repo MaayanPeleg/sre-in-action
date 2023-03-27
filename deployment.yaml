@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplewebserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: simplewebserver
+  template:
+    metadata:
+      labels:
+        name: simplewebserver
+    spec:
+      containers:
+      - name: simplewebserver
+        image: maayanpeleg87/simplewebserver:latest
+        ports:
+        - containerPort: 5000
