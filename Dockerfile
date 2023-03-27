@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["flask", "--app", "server", "run", ]
+CMD ["gunicorn", "server:app", "-b", "0.0.0.0:5000"]
